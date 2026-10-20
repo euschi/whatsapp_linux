@@ -2,7 +2,7 @@
   "name": "whatsapp-linux",
   "productName": "WhatsApp",
   "version": "1.0.0",
-  "description": "WhatsApp desktop per Linux (Arch/EndeavourOS): tray, notifiche, chiamate e videochiamate",
+  "description": "Client WhatsApp desktop non ufficiale per Linux (Arch/EndeavourOS): tray, notifiche, chiamate e videochiamate",
   "main": "src/main.js",
   "desktopName": "whatsapp-linux.desktop",
   "license": "MIT",

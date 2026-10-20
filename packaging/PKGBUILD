@@ -2,7 +2,7 @@
 pkgname=whatsapp-linux
 pkgver=1.0.0
 pkgrel=1
-pkgdesc='WhatsApp desktop per Linux: tray, notifiche, chiamate e videochiamate'
+pkgdesc='Client WhatsApp desktop non ufficiale: tray, notifiche, chiamate e videochiamate'
 arch=('any')
 url='https://github.com/euschi/whatsapp_linux'
 license=('MIT')

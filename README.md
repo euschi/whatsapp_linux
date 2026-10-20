@@ -1,5 +1,7 @@
 # WhatsApp per Linux
 
+> Client non ufficiale, non affiliato a WhatsApp o Meta.
+
 Client desktop di WhatsApp per Arch/EndeavourOS basato su Electron (`electron44` di sistema)
 che incapsula WhatsApp Web, con comportamento da app nativa.
 
@@ -17,6 +19,14 @@ che incapsula WhatsApp Web, con comportamento da app nativa.
 - Istanza singola: un secondo avvio porta in primo piano la finestra esistente
 
 ## Installazione
+
+Da AUR:
+
+```sh
+yay -S whatsapp-linux
+```
+
+Dai sorgenti locali:
 
 ```sh
 cd packaging
@@ -41,3 +51,9 @@ Una per riga in `~/.config/whatsapp-linux-flags.conf`, ad esempio `--ozone-platf
 
 - Impostazioni e sessione: `~/.config/whatsapp-linux/`
 - Avvio automatico: `~/.config/autostart/whatsapp-linux.desktop`
+
+## Rilascio di una nuova versione
+
+1. Aggiorna `version` in `package.json`, committa su `main`, crea e pusha il tag `vX.Y.Z`.
+2. Nel clone AUR (`ssh://aur@aur.archlinux.org/whatsapp-linux.git`) copia `packaging/aur/PKGBUILD`,
+   aggiorna `pkgver`, poi `updpkgsums && makepkg --printsrcinfo > .SRCINFO`, committa e pusha.
