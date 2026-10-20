@@ -7,14 +7,14 @@ arch=('any')
 url='https://github.com/euschi/whatsapp_linux'
 license=('MIT')
 _electron=electron44
-depends=("$_electron" 'libnotify' 'xdg-desktop-portal' 'pipewire')
+depends=("$_electron" 'libnotify' 'xdg-desktop-portal' 'pipewire' 'hicolor-icon-theme')
 optdepends=(
   'libappindicator-gtk3: system tray icon'
   'gnome-shell-extension-appindicator: system tray icon on GNOME'
   'hunspell-it: Italian spell checking'
 )
 source=("$pkgname-$pkgver.tar.gz::$url/archive/refs/tags/v$pkgver.tar.gz")
-sha256sums=('SKIP')
+sha256sums=('af2f1e31ce8541176f6c9fc22956d737df8f4c343bf7d940eb2af1a79045c15a')
 
 package() {
   cd "whatsapp_linux-$pkgver"

@@ -1,0 +1,19 @@
+pkgbase = whatsapp-linux
+	pkgdesc = Unofficial WhatsApp desktop client (WhatsApp Web wrapper) with tray, notifications, voice and video calls
+	pkgver = 1.0.0
+	pkgrel = 1
+	url = https://github.com/euschi/whatsapp_linux
+	arch = any
+	license = MIT
+	depends = electron44
+	depends = libnotify
+	depends = xdg-desktop-portal
+	depends = pipewire
+	depends = hicolor-icon-theme
+	optdepends = libappindicator-gtk3: system tray icon
+	optdepends = gnome-shell-extension-appindicator: system tray icon on GNOME
+	optdepends = hunspell-it: Italian spell checking
+	source = whatsapp-linux-1.0.0.tar.gz::https://github.com/euschi/whatsapp_linux/archive/refs/tags/v1.0.0.tar.gz
+	sha256sums = af2f1e31ce8541176f6c9fc22956d737df8f4c343bf7d940eb2af1a79045c15a
+
+pkgname = whatsapp-linux
