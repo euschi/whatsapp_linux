@@ -1,0 +1,18 @@
+[Desktop Entry]
+Type=Application
+Name=WhatsApp
+GenericName=Messaggistica
+Comment=WhatsApp per Linux: chat, chiamate e videochiamate
+Exec=whatsapp-linux %U
+Icon=whatsapp-linux
+Terminal=false
+Categories=Network;InstantMessaging;Chat;
+Keywords=whatsapp;chat;messaggi;chiamate;
+StartupWMClass=whatsapp-linux
+StartupNotify=true
+SingleMainWindow=true
+Actions=new-window-hidden;
+
+[Desktop Action new-window-hidden]
+Name=Avvia nella barra di sistema
+Exec=whatsapp-linux --hidden

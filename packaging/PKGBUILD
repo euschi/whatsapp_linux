@@ -1,0 +1,34 @@
+# Maintainer: Eugenio Schintu <eugenio.schintu@simultech.it>
+pkgname=whatsapp-linux
+pkgver=1.0.0
+pkgrel=1
+pkgdesc='WhatsApp desktop per Linux: tray, notifiche, chiamate e videochiamate'
+arch=('any')
+url='https://github.com/euschi/whatsapp_linux'
+license=('MIT')
+_electron=electron44
+depends=("$_electron" 'libnotify' 'xdg-desktop-portal' 'pipewire')
+optdepends=(
+  'libappindicator-gtk3: icona nella barra di sistema'
+  'gnome-shell-extension-appindicator: icona nella barra di sistema su GNOME'
+  'hunspell-it: dizionario italiano per il correttore'
+)
+
+_root="$startdir/.."
+
+package() {
+  install -d "$pkgdir/usr/lib/$pkgname"
+  cp -r "$_root/src" "$_root/package.json" "$pkgdir/usr/lib/$pkgname/"
+  install -d "$pkgdir/usr/lib/$pkgname/assets/icons"
+  install -m644 "$_root"/assets/icons/*.png "$pkgdir/usr/lib/$pkgname/assets/icons/"
+
+  install -Dm755 "$startdir/whatsapp-linux.sh" "$pkgdir/usr/bin/$pkgname"
+  install -Dm644 "$startdir/whatsapp-linux.desktop" "$pkgdir/usr/share/applications/$pkgname.desktop"
+
+  for s in 16 22 24 32 48 64 128 256 512; do
+    install -Dm644 "$_root/assets/icons/app-$s.png" \
+      "$pkgdir/usr/share/icons/hicolor/${s}x${s}/apps/$pkgname.png"
+  done
+  install -Dm644 "$_root/assets/icons/app.svg" "$pkgdir/usr/share/icons/hicolor/scalable/apps/$pkgname.svg"
+  install -Dm644 "$_root/LICENSE" "$pkgdir/usr/share/licenses/$pkgname/LICENSE"
+}
